@@ -5,6 +5,7 @@ import * as z from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod'
 import {MessageSquare} from 'lucide-react';
 import { useForm } from 'react-hook-form';
+import { cn } from '@/lib/utils';
 
 import Heading from "@/components/Heading";
 import { formSchema } from './constants';
@@ -16,7 +17,6 @@ import { useState } from 'react';
 import { ChatCompletionRequestMessage } from 'openai';
 import Empty from '@/components/Empty';
 import Loader from '@/components/Loader';
-import { cn } from '@/lib/utils';
 import UserAvatar from '@/components/UserAvatar';
 import BotAvatar from '@/components/BotAvatar';
 
