@@ -3,7 +3,7 @@
 import axios from 'axios'
 import * as z from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod'
-import {CodeIcon, Divide} from 'lucide-react';
+import {CodeIcon} from 'lucide-react';
 import { useForm } from 'react-hook-form';
 import ReactMarkdown from 'react-markdown';
 
@@ -64,7 +64,7 @@ export default function Code() {
     <div>
       <Heading 
         title="Code Generation"
-        description="Generate code using descriptive text."
+        description="Turn your prompt into an image!"
         icon={CodeIcon}
         iconCOlor='text-green-700'
         bgColor='bg-green-700/10'
@@ -100,7 +100,7 @@ export default function Code() {
           {messages.length === 0 && !isLoading && (
             <Empty label="No conversation started."/>
           )}
-            <div className='flex flex-col-reverse gap-y-4'>
+            <div className='flex flex-col gap-y-4'>
               {messages.map((message) => (
                 <div 
                 key={message.content}
