@@ -19,10 +19,12 @@ import Empty from '@/components/Empty';
 import Loader from '@/components/Loader';
 import UserAvatar from '@/components/UserAvatar';
 import BotAvatar from '@/components/BotAvatar';
+import { useProModal } from '@/app/hooks/use-pro-modal';
 
 export default function Conversation() {
   const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
+  const proModal = useProModal();
   const router = useRouter();
   
   const form = useForm<z.infer<typeof formSchema>>({
@@ -52,8 +54,9 @@ export default function Conversation() {
       form.reset()
 
     } catch (error:any) {
-      //TODO: Open Pro Modal
-      console.log(error)
+      if(error?.response?.status === 403){
+        proModal.onOpen();
+      }
     }finally{
       router.refresh()
     }
