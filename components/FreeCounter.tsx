@@ -8,10 +8,11 @@ import { Zap } from "lucide-react";
 import { useProModal } from "@/app/hooks/use-pro-modal";
 
 interface FreeCounterProps{
-  apiLimitCounter: number;
+  apiLimitCount: number;
+  isPro: boolean;
 }
 
-export default function FreeCounter( {apiLimitCount = 0} : FreeCounterProps) {
+export default function FreeCounter( {apiLimitCount = 0, isPro = false} : FreeCounterProps) {
   const [mounted, setMounted] = useState(false);
   const proModal = useProModal();
 
@@ -23,6 +24,9 @@ export default function FreeCounter( {apiLimitCount = 0} : FreeCounterProps) {
     return null;
   }
 
+  if(isPro){
+    return null;
+  }
   return (
     <div className="px-3">
       <Card className="bg-white/10 border-0">
