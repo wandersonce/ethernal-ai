@@ -45,6 +45,7 @@ export default function Video() {
       if(error?.response?.status === 403){
         proModal.onOpen();
       } else{
+        console.log(error)
         toast.error("Something went wrong")
       }
     }finally{
@@ -82,7 +83,7 @@ export default function Video() {
               </Button>
             </form>
           </Form>
-          <p className='text-xs text-muted-foreground pl-4 pt-1'>If you are trying this for the first time, it may take a white to get the response. Don&apos;t worry it still working 😊</p>
+          <p className='text-xs text-muted-foreground pl-4 pt-1'>If you are trying this for the first time, it may take a while to get the response. Don&apos;t worry it is still working 😊</p>
         </div>
         <div className='space-y-4 mt-4'>
           {isLoading && (

@@ -37,7 +37,7 @@ export default function LadingHero() {
           </Link>
         </div>
         <div className='text-zinc-400 text-xs md:text-sm font-normal' >
-            No Credid Card required!
+            No Credit Card required!
         </div>
       </div>
     </div>
